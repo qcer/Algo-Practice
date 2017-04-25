@@ -8,6 +8,6 @@
 2. [选择排序](https://github.com/qcer/Algo-Practice/blob/master/Sort/selectSort.md)
 3. [插入排序](https://github.com/qcer/Algo-Practice/blob/master/Sort/insertSort.md)
 4. [希尔排序](https://github.com/qcer/Algo-Practice/blob/master/Sort/shellSort.md)
-5. [归并排序]()
-6. [快速排序]()
+5. [归并排序](https://github.com/qcer/Algo-Practice/blob/master/Sort/mergeSort.md)
+6. [快速排序](https://github.com/qcer/Algo-Practice/blob/master/Sort/quickSort.md)
 

@@ -8,13 +8,13 @@
 			j = high+1;
 		while(true){
 			while(ary[++i] < pivot){
-				if (i == high) {break;}
+				if (i == high) {break;}//在序列尾部相遇，此处不是不许的
 			}
 			while(ary[--j] > pivot){
-				if (j == low) {break;}
+				if (j == low) {break;}//此处不是不许的，循环也不可能从此处退出
 			}
-			if (i >= j) {break;};
-			[ary[i],ary[j]] = [ary[j],ary[i]];
+			if (i >= j) {break;};//此处必须，且相当重要
+			[ary[i],ary[j]] = [ary[j],ary[i]];//两指针未相遇
 		}
 		[ary[low],ary[j]] = [ary[j],ary[low]];
 		return j;
@@ -50,10 +50,13 @@
          if (i >= j) {break;};
 这里退出。此时i>j;
 
-4）条件
+4）但实际上条件
 
      if (j == low) {break;}
-是多余条件，循环不可能从这里退出，可删除。
+和条件
+
+      if (i == high) {break;}
+均不是必须的，可去掉。
 
 **测试数组：**
 

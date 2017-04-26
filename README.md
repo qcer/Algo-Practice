@@ -12,4 +12,4 @@
 6. [快速排序](https://github.com/qcer/Algo-Practice/blob/master/Sort/quickSort.md)
 
 #### **二、查找**
-
+1. [二分查找](https://github.com/qcer/Algo-Practice/blob/master/Search/binarySearch.md)

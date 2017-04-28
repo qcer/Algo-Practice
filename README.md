@@ -13,3 +13,9 @@
 
 #### **二、查找**
 1. [二分查找](https://github.com/qcer/Algo-Practice/blob/master/Search/binarySearch.md)
+
+
+
+#### **三、其他**
+1. [求区间问题](https://github.com/qcer/Algo-Practice/blob/master/Others/001.md)
+2. [求第K大元素](https://github.com/qcer/Algo-Practice/blob/master/Others/002.md)

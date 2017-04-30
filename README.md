@@ -24,6 +24,10 @@
 5. [两数组第K值](https://github.com/qcer/Algo-Practice/blob/master/Others/005.md)
 6. [数组去重](https://github.com/qcer/Algo-Practice/blob/master/Others/006.md)
 7. [三色排序](https://github.com/qcer/Algo-Practice/blob/master/Others/007.md)
+8. [盛水问题](https://github.com/qcer/Algo-Practice/blob/master/Others/008.md)
+9. [数组分界值](https://github.com/qcer/Algo-Practice/blob/master/Others/009.md)
+
+
 
 
 

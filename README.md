@@ -19,3 +19,10 @@
 #### **三、其他**
 1. [求区间问题](https://github.com/qcer/Algo-Practice/blob/master/Others/001.md)
 2. [求第K大元素](https://github.com/qcer/Algo-Practice/blob/master/Others/002.md)
+3. [寻找两数之和为sum的元素](https://github.com/qcer/Algo-Practice/blob/master/Others/003.md)
+4. [平移数组](https://github.com/qcer/Algo-Practice/blob/master/Others/004.md)
+4. [两数组第K值](https://github.com/qcer/Algo-Practice/blob/master/Others/005.md)
+
+
+
+

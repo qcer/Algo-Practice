@@ -22,7 +22,7 @@
 			sink(ary,k,end);
 		}
 		console.log(ary);
-		while(end>0){//a[]不参与排序
+		while(end>0){//a[0]不参与排序
 			[ary[1],ary[end]] = [ary[end],ary[1]];
 			sink(ary,1,end-1);
 			end--;

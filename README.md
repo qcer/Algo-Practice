@@ -28,9 +28,13 @@
 9. [数组分界值](https://github.com/qcer/Algo-Practice/blob/master/Others/009.md)
 
 
-#### **三、DP问题**
+#### **四、DP问题**
 1. [数字三角形问题](https://github.com/qcer/Algo-Practice/blob/master/DP/001.md)
-1. [最长递增子序列](https://github.com/qcer/Algo-Practice/blob/master/DP/002.md)
+2. [最长递增子序列](https://github.com/qcer/Algo-Practice/blob/master/DP/002.md)
+3. [0-1背包问题](https://github.com/qcer/Algo-Practice/blob/master/DP/003.md)
+
+
+
 
 
 

@@ -34,6 +34,9 @@
 1. [数字三角形问题](https://github.com/qcer/Algo-Practice/blob/master/DP/001.md)
 2. [最长递增子序列](https://github.com/qcer/Algo-Practice/blob/master/DP/002.md)
 3. [0-1背包问题](https://github.com/qcer/Algo-Practice/blob/master/DP/003.md)
+4. [连续子序列最大和](https://github.com/qcer/Algo-Practice/blob/master/DP/004.md)
+
+
 
 
 

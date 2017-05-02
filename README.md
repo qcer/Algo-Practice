@@ -26,6 +26,8 @@
 7. [三色排序](https://github.com/qcer/Algo-Practice/blob/master/Others/007.md)
 8. [盛水问题](https://github.com/qcer/Algo-Practice/blob/master/Others/008.md)
 9. [数组分界值](https://github.com/qcer/Algo-Practice/blob/master/Others/009.md)
+10. [买股票问题](https://github.com/qcer/Algo-Practice/blob/master/Others/010.md)
+
 
 
 #### **四、DP问题**

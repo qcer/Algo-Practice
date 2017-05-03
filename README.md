@@ -35,6 +35,10 @@
 2. [最长递增子序列](https://github.com/qcer/Algo-Practice/blob/master/DP/002.md)
 3. [0-1背包问题](https://github.com/qcer/Algo-Practice/blob/master/DP/003.md)
 4. [连续子序列最大和](https://github.com/qcer/Algo-Practice/blob/master/DP/004.md)
+5. [数字矩形最大路径和](https://github.com/qcer/Algo-Practice/blob/master/DP/005.md)
+6. [爬楼梯](https://github.com/qcer/Algo-Practice/blob/master/DP/006.md)
+
+
 
 
 

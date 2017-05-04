@@ -37,6 +37,10 @@
 4. [连续子序列最大和](https://github.com/qcer/Algo-Practice/blob/master/DP/004.md)
 5. [数字矩形最大路径和](https://github.com/qcer/Algo-Practice/blob/master/DP/005.md)
 6. [爬楼梯](https://github.com/qcer/Algo-Practice/blob/master/DP/006.md)
+7. [最长公共子串](https://github.com/qcer/Algo-Practice/blob/master/DP/007.md)
+8. [最长公共子序列](https://github.com/qcer/Algo-Practice/blob/master/DP/008.md)
+
+
 
 
 

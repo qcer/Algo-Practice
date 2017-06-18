@@ -27,6 +27,7 @@
 8. [盛水问题](https://github.com/qcer/Algo-Practice/blob/master/Others/008.md)
 9. [数组分界值](https://github.com/qcer/Algo-Practice/blob/master/Others/009.md)
 10. [买股票问题](https://github.com/qcer/Algo-Practice/blob/master/Others/010.md)
+11. [随机红包问题](https://github.com/qcer/Algo-Practice/blob/master/Others/011.md)
 
 
 
@@ -42,7 +43,7 @@
 8. [最长公共子序列](https://github.com/qcer/Algo-Practice/blob/master/DP/008.md)
 
 
-#### **四、字符串*
+#### **五、字符串*
 1. [字符判重](https://github.com/qcer/Algo-Practice/blob/master/String/isUnique.md)
 
 

@@ -139,14 +139,42 @@
 					return tmpNode;
 				}
 				static remove(rootNode,target){
-					
-				}					
+					var targetNode = BinNode.search(rootNode,target);
+					if (targetNode !== null) {
+						if (targetNode.rChild === null && targetNode.lChild === null) {
+							if (targetNode.parent.data > target) {
+								targetNode.parent.lChild = null;
+							}else{
+								targetNode.parent.rChild = null;
+							}
+						}else if (targetNode.rChild !== null && targetNode.lChild === null) {
+							if (targetNode.parent.data > target) {
+								targetNode.rChild.parent = targetNode.parent;
+								targetNode.parent.lChild = targetNode.rChild;
+							}else{
+								targetNode.rChild.parent = targetNode.parent;
+								targetNode.parent.rChild = targetNode.rChild;
+							}
+						}else if (targetNode.rChild === null && targetNode.lChild !== null) {
+							if (targetNode.parent.data > target) {
+								targetNode.lChild.parent = targetNode.parent;
+								targetNode.parent.lChild = targetNode.lChild;
+							}else{
+								targetNode.lChild.parent = targetNode.parent;
+								targetNode.parent.rChild = targetNode.lChild;
+							}
+						}else{
+							var succNode = BinNode.succ(rootNode,targetNode);
+							targetNode.data = succNode.data;
+							BinNode.remove(targetNode.rChild,succNode.data);
+						}
+					}
+				}						
 			}
 
 			
-	var ary = [15,3,7,1,20,30,40,12,9];
+	var ary = [15,1,7,3,20,30,40,35,12,9];
 	var rootNode = BinNode.createBinSearchTree(ary);
 	BinNode.traversalMid(rootNode);
 
-	BinNode.insert(rootNode,35);
 	BinNode.remove(rootNode,7);

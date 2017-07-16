@@ -11,6 +11,22 @@
 				static visitNode(binNode){
 					console.log(binNode.data);
 				};
+				static updateHeight(binNode){
+					var tmpNode = binNode.parent;
+					while(tmpNode !== null){
+						if (tmpNode.lChild !== null && tmpNode.rChild !== null) {//如果父节点左右子树
+							var maxHeight = Math.max(tmpNode.rChild.height,tmpNode.lChild.height);
+							if (tmpNode.height === maxHeight+1) {//但是左右子树的高度变化对父节点的高度没有影响
+								break;//直接退出循环
+							}else{
+								tmpNode.height = maxHeight+1;//左右子树的高度变化对父节点的高度有影响,参与下轮循环
+							}
+						}else{//父节点只有左子树或者右子树,高度+1，参与下轮循环。
+							tmpNode.height += 1;
+						}
+						tmpNode = tmpNode.parent;//迭代循环
+					}
+				};
 				static traversalPre(binNode){
 					if (binNode == null) {return}
 					BinNode.visitNode(binNode);
@@ -82,6 +98,7 @@
 								tmpNode = tmpNode.lChild;
 							}
 						}
+						BinNode.updateHeight(newNode);
 					}
 					return rootNode;
 				};

@@ -50,8 +50,8 @@
 #### **六、树*
 1. [遍历](https://github.com/qcer/Algo-Practice/blob/master/tree/traversal.md)
 2. [二叉搜索树](https://github.com/qcer/Algo-Practice/blob/master/tree/bst.md)
-2. [二叉搜索树最近公共祖先](https://github.com/qcer/Algo-Practice/blob/master/tree/LCA.md)
-
+3. [二叉搜索树最近公共祖先](https://github.com/qcer/Algo-Practice/blob/master/tree/LCA.md)
+4. [AVL树](https://github.com/qcer/Algo-Practice/blob/master/tree/avl.md)
 
 
 

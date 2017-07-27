@@ -1,4 +1,4 @@
-	static LCAofBST(rootNode,dataOne,dataTwo){
+	function LCAofBST(rootNode,dataOne,dataTwo){
 		if (dataOne > dataTwo) {
 			[dataOne,dataTwo] = [dataTwo,dataOne];
 		}
@@ -15,3 +15,5 @@
 		return tmpNode;
 	}
 
+注：
+节点也是其自身的祖先。

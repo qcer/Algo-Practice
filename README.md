@@ -48,11 +48,16 @@
 
 
 #### **六、树*
-1. [遍历](https://github.com/qcer/Algo-Practice/blob/master/tree/traversal.md)
+1. [遍历(前、中、后序遍历)](https://github.com/qcer/Algo-Practice/blob/master/tree/traversal.md)
 2. [二叉搜索树](https://github.com/qcer/Algo-Practice/blob/master/tree/bst.md)
 3. [二叉搜索树最近公共祖先](https://github.com/qcer/Algo-Practice/blob/master/tree/LCA.md)
-4. [AVL树](https://github.com/qcer/Algo-Practice/blob/master/tree/avl.md)
-
+4. [二叉最近公共祖先(一)](https://github.com/qcer/Algo-Practice/blob/master/tree/LCAofBinTree.md)
+5. [二叉最近公共祖先(二)](https://github.com/qcer/Algo-Practice/blob/master/tree/LCAofGZ.md)
+6. [随机构造二叉树](https://github.com/qcer/Algo-Practice/blob/master/tree/createBinTreeOfRandom.md)
+7. [AVL树](https://github.com/qcer/Algo-Practice/blob/master/tree/avl.md)
+8. [红黑树](https://github.com/qcer/Algo-Practice/blob/master/tree/RBTree.md)
+9. [左倾红黑树](https://github.com/qcer/Algo-Practice/blob/master/tree/Left-Leaning-RBTree.md)
+10. [翻转二叉树](https://github.com/qcer/Algo-Practice/blob/master/tree/reverseBinTree.md)
 
 
 

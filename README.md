@@ -59,6 +59,7 @@
 9. [左倾红黑树](https://github.com/qcer/Algo-Practice/blob/master/tree/Left-Leaning-RBTree.md)
 10. [翻转二叉树](https://github.com/qcer/Algo-Practice/blob/master/tree/reverseBinTree.md)
 11. [结点中序遍历下的前驱和后继结点](https://github.com/qcer/Algo-Practice/blob/master/tree/succANDprede.md)
+12. [二叉搜索树最邻近结点](https://github.com/qcer/Algo-Practice/blob/master/tree/getNearestNode.md)
 
 
 

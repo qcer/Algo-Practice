@@ -76,3 +76,18 @@
 					return rootNode;
 				}
 			}
+
+			function traversalLevelOrder(rootNode){
+				var aux = [rootNode];
+				var tmpNode = null;
+				while(aux.length !== 0){
+					tmpNode = aux.shift();
+					Node.visitNode(tmpNode);
+					if (tmpNode.lChild !== null) {
+						aux.push(tmpNode.lChild);
+					}
+					if (tmpNode.rChild !== null) {
+						aux.push(tmpNode.rChild);
+					}
+				}
+			}

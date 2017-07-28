@@ -2,6 +2,7 @@
 注：该问题规约为求两条链表的相交节点。
 
 **JS实现**
+
 	function LCAofBinTree(rootNode,node1,node2) {
 		// body...
 		var aux1 = [],

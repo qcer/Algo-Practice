@@ -48,7 +48,7 @@
 
 
 #### **六、树*
-1. [遍历(前、中、后序遍历)](https://github.com/qcer/Algo-Practice/blob/master/tree/traversal.md)
+1. [遍历(前、中、后、序,层次遍历)](https://github.com/qcer/Algo-Practice/blob/master/tree/traversal.md)
 2. [二叉搜索树](https://github.com/qcer/Algo-Practice/blob/master/tree/bst.md)
 3. [二叉搜索树最近公共祖先](https://github.com/qcer/Algo-Practice/blob/master/tree/LCA.md)
 4. [二叉最近公共祖先(一)](https://github.com/qcer/Algo-Practice/blob/master/tree/LCAofBinTree.md)
@@ -58,6 +58,7 @@
 8. [红黑树](https://github.com/qcer/Algo-Practice/blob/master/tree/RBTree.md)
 9. [左倾红黑树](https://github.com/qcer/Algo-Practice/blob/master/tree/Left-Leaning-RBTree.md)
 10. [翻转二叉树](https://github.com/qcer/Algo-Practice/blob/master/tree/reverseBinTree.md)
+11. [结点中序遍历下的前驱和后继结点](https://github.com/qcer/Algo-Practice/blob/master/tree/succANDprede.md)
 
 
 

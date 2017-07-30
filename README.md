@@ -28,6 +28,8 @@
 9. [数组分界值](https://github.com/qcer/Algo-Practice/blob/master/Others/009.md)
 10. [买股票问题](https://github.com/qcer/Algo-Practice/blob/master/Others/010.md)
 11. [随机红包问题](https://github.com/qcer/Algo-Practice/blob/master/Others/011.md)
+12. [N皇后问题](https://github.com/qcer/Algo-Practice/blob/master/Others/queenOfN.md)
+
 
 
 
@@ -60,6 +62,8 @@
 10. [翻转二叉树](https://github.com/qcer/Algo-Practice/blob/master/tree/reverseBinTree.md)
 11. [结点中序遍历下的前驱和后继结点](https://github.com/qcer/Algo-Practice/blob/master/tree/succANDprede.md)
 12. [二叉搜索树最邻近结点](https://github.com/qcer/Algo-Practice/blob/master/tree/getNearestNode.md)
+13. [二叉树路径和](https://github.com/qcer/Algo-Practice/blob/master/tree/findSumOfPath.md)
+
 
 
 

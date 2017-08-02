@@ -4,51 +4,37 @@
 
 	function getPredeNode(node) {
 		// body...
-		var tmpNode = null;
 		if (node === null) {return null};
 		if (node.lChild !== null) {
-			tmpNode = node.lChild;
-			while(tmpNode.rChild !== null){
-				tmpNode = tmpNode.rChild;
+			node = node.lChild;
+			while(node.rChild !== null){
+				node = node.rChild;
 			}
-			return tmpNode;
 		}else{
-			if (node.parent.rChild === node) {
-				return node.parent;
-			}else{
-				tmpNode = node.parent
-				while(true){
-					if (tmpNode.parent === null) {return null;}
-					if (tmpNode.parent.rChild === tmpNode) {break;}
-					tmpNode = tmpNode.parent;
-				}
-				return tmpNode.parent;
+			while(node.parent.lChild === node){
+				node = node.parent;
+				if (node.parent === null) {break}
 			}
+			node = node.parent;
 		}
+		return node;
 	}
 
 
 **后继节点**
 	function getSuccNode(node){
-		var tmpNode = null;
 		if (node === null) {return null};
 		if (node.rChild !== null) {
-			tmpNode = node.rChild;
-			while(tmpNode.lChild !== null){
-				tmpNode = tmpNode.lChild;
+			node = node.rChild;
+			while(node.lChild !== null){
+				node = node.lChild;
 			}
-			return tmpNode;
 		}else{
-			if (node.parent.lChild === node) {
-				return node.parent;
-			}else{
-				tmpNode = node.parent
-				while(true){
-					if (tmpNode.parent === null) {return null;}
-					if (tmpNode.parent.lChild === tmpNode) {break;}
-					tmpNode = tmpNode.parent;
-				}
-				return tmpNode.parent;
+			while(node.parent.rChild === node){
+				node = node.parent;
+				if (node.parent === null) {break}
 			}
+			node = node.parent;
 		}
+		return node;
 	}

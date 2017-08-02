@@ -1,4 +1,4 @@
-	class BinNode{
+	class Node{
 				constructor(data,parent=null,lChild=null,rChild=null,height=0){
 					this.data = data;
 					this.parent = parent;
@@ -27,30 +27,12 @@
 						tmpNode = tmpNode.parent;
 					}
 				};
-				static traversalPre(binNode){
-					if (binNode == null) {return}
-					BinNode.visitNode(binNode);
-					BinNode.TravelPre(binNode.lChild);
-					BinNode.TravelPre(binNode.rChild);
-				};
-				static traversalMid(binNode){
-					if (binNode == null) {return}
-					BinNode.TravelMid(binNode.lChild);
-					BinNode.visitNode(binNode);
-					BinNode.TravelMid(binNode.rChild);
-				};
-				static traversalPost(binNode){
-					if (binNode == null) {return}
-					BinNode.TravelAfter(binNode.lChild);
-					BinNode.TravelAfter(binNode.rChild);
-					BinNode.visitNode(binNode);
-				};
-
+				
 				static createBinTree(ary){
-					var rootNode = new BinNode(ary.pop());
+					var rootNode = new this(ary.pop());
 					var tmpNode = null;
 					while(ary.length !== 0){
-						var newNode = new BinNode(ary.pop());
+						var newNode = new this(ary.pop());
 						tmpNode = rootNode;
 						while(true) {
 							if(Math.random() > 0.5){
@@ -71,23 +53,93 @@
 								}
 							}
 						}
-						BinNode.updateHeight(newNode);
+						this.updateHeight(newNode);
 					}
 					return rootNode;
 				}
 			}
+**递归版本**
 
-			function traversalLevelOrder(rootNode){
-				var aux = [rootNode];
-				var tmpNode = null;
-				while(aux.length !== 0){
-					tmpNode = aux.shift();
-					Node.visitNode(tmpNode);
-					if (tmpNode.lChild !== null) {
-						aux.push(tmpNode.lChild);
-					}
-					if (tmpNode.rChild !== null) {
-						aux.push(tmpNode.rChild);
-					}
+	//前序遍历
+	function traversalPre(node){
+		if (node == null) {return}
+		this.visitNode(node);
+		this.TravelPre(node.lChild);
+		this.TravelPre(node.rChild);
+	};
+	//中序遍历
+	function traversalMid(node){
+		if (node == null) {return}
+		this.TravelMid(node.lChild);
+		this.visitNode(node);
+		this.TravelMid(node.rChild);
+	};
+	//后序遍历
+	function traversalPost(node){
+		if (node == null) {return}
+		this.TravelAfter(node.lChild);
+		this.TravelAfter(node.rChild);
+		this.visitNode(node);
+	};
+
+**迭代版本**
+	
+	//前序遍历
+	function traversalPre(node) {
+		// body...
+		var result = [];
+		if (node !== null) {
+			var aux = [node];
+			var tmpNode = null;
+			while(aux.length >0){	
+				tmpNode = aux.pop();
+				if (tmpNode !== null) {
+					aux.push(tmpNode.rChild);
+					aux.push(tmpNode.lChild);
+					result.push(tmpNode.data);
 				}
 			}
+		}
+		return result;			
+	}
+
+	//中序遍历
+	function reachDeepestOfLeft(node,aux) {
+		// body...
+		while(node !== null){
+			aux.push(node);
+			node = node.lChild;
+		}
+		return aux;
+	}
+	function traversalMid(node) {
+		// body...
+		var result = [];
+		if (node !== null) {
+			var aux = [];
+			while(true){
+				aux = reachDeepestOfLeft(node,aux);
+				if (aux.length === 0) {break;}
+				node = aux.pop();
+				result.push(node.data);
+				node = node.rChild;
+			}
+		}
+		return result;			
+	}
+
+	//层次遍历
+	function traversalLevelOrder(node){
+		var aux = [node];
+		var tmpNode = null;
+		while(aux.length !== 0){
+			tmpNode = aux.shift();
+			Node.visitNode(tmpNode);
+			if (tmpNode.lChild !== null) {
+				aux.push(tmpNode.lChild);
+			}
+			if (tmpNode.rChild !== null) {
+				aux.push(tmpNode.rChild);
+			}
+		}
+	}

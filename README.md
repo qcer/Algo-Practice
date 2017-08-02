@@ -45,11 +45,11 @@
 8. [最长公共子序列](https://github.com/qcer/Algo-Practice/blob/master/DP/008.md)
 
 
-#### **五、字符串*
+#### **五、字符串**
 1. [字符判重](https://github.com/qcer/Algo-Practice/blob/master/String/isUnique.md)
 
 
-#### **六、树*
+#### **六、树**
 1. [遍历(前、中、后、序,层次遍历)](https://github.com/qcer/Algo-Practice/blob/master/tree/traversal.md)
 2. [二叉搜索树](https://github.com/qcer/Algo-Practice/blob/master/tree/bst.md)
 3. [二叉搜索树最近公共祖先](https://github.com/qcer/Algo-Practice/blob/master/tree/LCA.md)

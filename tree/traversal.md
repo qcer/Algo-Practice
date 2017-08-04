@@ -58,6 +58,7 @@
 					return rootNode;
 				}
 			}
+			
 **递归版本**
 
 	//前序遍历
@@ -104,6 +105,7 @@
 	}
 
 	//中序遍历
+	//迭代版本一
 	function reachDeepestOfLeft(node,aux) {
 		// body...
 		while(node !== null){
@@ -126,6 +128,57 @@
 			}
 		}
 		return result;			
+	}
+	//迭代版本二
+	function traversalMid(node) {
+		// body...
+		var aux = [];
+		while(true){
+			if (node !== null) {
+				aux.push(node);
+				node = node.lChild;
+			}else{
+				if (aux.length > 0 ) {
+					node = aux.pop();
+					Node.visitNode(node);
+					node = node.rChild;
+				}else{
+					break;
+				}
+			}
+		}
+	}
+
+	//后序遍历
+	function getNextNode(node,aux) {
+		// body...
+		while(node !== null){
+			if (node.lChild !== null) {
+				if (node.rChild !== null) {
+					aux.push(node.rChild)
+				}
+				aux.push(node.lChild);
+			}else{
+				aux.push(node.rChild);
+			}
+			node = aux[aux.length-1];
+		}
+		aux.pop();
+		return aux;
+	}
+	function traversalPost(node) {
+		// body...
+		if (node === null) {return};
+		var aux = [node];
+		var topNode = null;
+		while(aux.length > 0){
+			topNode = aux[aux.length-1];
+			if (node.parent !== topNode) {
+				aux = getNextNode(topNode,aux);
+			}
+			node = aux.pop();
+			Node.visitNode(node);
+		}
 	}
 
 	//层次遍历

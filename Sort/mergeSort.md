@@ -2,29 +2,29 @@
 #### **JS实现**
 #### ** 一、自顶向下版本**
 
-	function merge(ary,low,mid,high) {
-		// body...
-		var aux = [],
-			i = low,
-			j = mid+1;
-		for (let k = low; k <= high; k++) {
-			aux[k] = ary[k];
-		}
-		for (let m = low; m <= high; m++) {
-			if (i > mid) {ary[m] = aux[j++]}
-			else if (j > high) {ary[m] = aux[i++]}
-			else if (aux[i] <= aux[j]) {ary[m] = aux[i++]}
-			else  {ary[m] = aux[j++]}
-		}
-	}
-	function mergeSort(ary,low,high) {
-		// body...
-		if (low >= high) {return}//递归终止条件
-		var mid = low+parseInt((high-low)/2);
-		mergeSort(ary,low,mid);
-		mergeSort(ary,mid+1,high);
-		merge(ary,low,mid,high);
-	}
+    function merge(ary,low,mid,high) {
+        // body...
+        var aux = [],
+            i = low,
+            j = mid+1;
+        for (let k = low; k <= high; k++) {
+            aux[k] = ary[k];
+        }
+        for (let m = low; m <= high; m++) {
+            if (i > mid) {ary[m] = aux[j++]}
+            else if (j > high) {ary[m] = aux[i++]}
+            else if (aux[i] <= aux[j]) {ary[m] = aux[i++]}
+            else  {ary[m] = aux[j++]}
+        }
+    }
+    function mergeSort(ary,low,high) {
+        // body...
+        if (low >= high) {return}//递归终止条件
+        var mid = low+parseInt((high-low)/2);
+        mergeSort(ary,low,mid);
+        mergeSort(ary,mid+1,high);
+        merge(ary,low,mid,high);
+    }
 
 注：
 
@@ -44,32 +44,32 @@
 
 #### **二、自底向上版本（非递归版）**
 
-	function merge(ary,low,mid,high) {
-		// body...
-		var aux = [],
-			i = low,
-			j = mid+1;
-		for (let k = low; k <= high; k++) {
-			aux[k] = ary[k];
-		}
-		for (let m = low; m <= high; m++) {
-			if (i > mid) {ary[m] = aux[j++]}
-			else if (j > high) {ary[m] = aux[i++]}
-			else if (aux[i] <= aux[j]) {ary[m] = aux[i++]}
-			else  {ary[m] = aux[j++]}
-		}
-	}
-	function mergeSort(ary) {
-		// body...
-		var length = ary.length;
-		var mid = 0;
-		for (let size = 1; size < length; size+=size) {
-			for (let start = 0; start < length-size ; start+=2*size) {
-				mid = start+size-1;
-				merge(ary,start,mid,Math.min(start+2*size-1,length-1));
-			}
-		}
-	}
+    function merge(ary,low,mid,high) {
+        // body...
+        var aux = [],
+            i = low,
+            j = mid+1;
+        for (let k = low; k <= high; k++) {
+            aux[k] = ary[k];
+        }
+        for (let m = low; m <= high; m++) {
+            if (i > mid) {ary[m] = aux[j++]}
+            else if (j > high) {ary[m] = aux[i++]}
+            else if (aux[i] <= aux[j]) {ary[m] = aux[i++]}
+            else  {ary[m] = aux[j++]}
+        }
+    }
+    function mergeSort(ary) {
+        // body...
+        var length = ary.length;
+        var mid = 0;
+        for (let size = 1; size < length; size+=size) {
+            for (let start = 0; start < length-size ; start+=2*size) {
+                mid = start+size-1;
+                merge(ary,start,mid,Math.min(start+2*size-1,length-1));
+            }
+        }
+    }
 
 **总结：**
 
@@ -77,12 +77,12 @@
 
 **测试数组：**
 
-	ary = [9,12,78,10,30,8,20];
+    ary = [9,12,78,10,30,8,20];
 **排序过程：**
 
-	[9, 12, 78, 10, 30, 8, 20]
-	[9, 12, 10, 78, 30, 8, 20]
-	[9, 10, 12, 78, 30, 8, 20]
-	[9, 10, 12, 78, 8, 30, 20]
-	[9, 10, 12, 78, 8, 20, 30]
-	[8, 9, 10, 12, 20, 30, 78]
+    [9, 12, 78, 10, 30, 8, 20]
+    [9, 12, 10, 78, 30, 8, 20]
+    [9, 10, 12, 78, 30, 8, 20]
+    [9, 10, 12, 78, 8, 30, 20]
+    [9, 10, 12, 78, 8, 20, 30]
+    [8, 9, 10, 12, 20, 30, 78]

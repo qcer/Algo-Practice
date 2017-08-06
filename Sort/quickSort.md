@@ -1,32 +1,32 @@
 ### **快速排序**
 #### **JS实现**
 
-	function partition(ary,low,high) {
-		// body...
-		var pivot = ary[low];
-		var i = low,
-			j = high+1;
-		while(true){
-			while(ary[++i] < pivot){
-				if (i == high) {break;}//在序列尾部相遇，此处不是必须的
-			}
-			while(ary[--j] > pivot){
-				if (j == low) {break;}//此处不是必须的，循环也不可能从此处退出
-			}
-			if (i >= j) {break;};//此处必须，且相当重要
-			[ary[i],ary[j]] = [ary[j],ary[i]];//两指针未相遇
-		}
-		[ary[low],ary[j]] = [ary[j],ary[low]];
-		return j;
-	}
+    function partition(ary,low,high) {
+        // body...
+        var pivot = ary[low];
+        var i = low,
+            j = high+1;
+        while(true){
+            while(ary[++i] < pivot){
+                if (i == high) {break;}//在序列尾部相遇，此处不是必须的
+            }
+            while(ary[--j] > pivot){
+                if (j == low) {break;}//此处不是必须的，循环也不可能从此处退出
+            }
+            if (i >= j) {break;};//此处必须，且相当重要
+            [ary[i],ary[j]] = [ary[j],ary[i]];//两指针未相遇
+        }
+        [ary[low],ary[j]] = [ary[j],ary[low]];
+        return j;
+    }
 
-	function quickSort(ary,low,high) {
-		// body...
-		if (low >= high) {return} //递归终止条件
-		var index = partition(ary,low,high);
-		quickSort(ary,low,index-1);
-		quickSort(ary,index+1,high);
-	}
+    function quickSort(ary,low,high) {
+        // body...
+        if (low >= high) {return} //递归终止条件
+        var index = partition(ary,low,high);
+        quickSort(ary,low,index-1);
+        quickSort(ary,index+1,high);
+    }
 注：
 
 1、分割函数中，左右扫描停下来的位置建议为分别为：大于等于基准元素和小于等于基准元素。这样能避免某些恶劣的情况。
@@ -60,10 +60,10 @@
 
 **测试数组：**
 
-	ary = [9,12,78,10,30,8,20];
+    ary = [9,12,78,10,30,8,20];
 **排序过程：**
 
-	[8, 9, 78, 10, 30, 12, 20]
-	[8, 9, 20, 10, 30, 12, 78]
-	[8, 9, 12, 10, 20, 30, 78]
-	[8, 9, 10, 12, 20, 30, 78]
+    [8, 9, 78, 10, 30, 12, 20]
+    [8, 9, 20, 10, 30, 12, 78]
+    [8, 9, 12, 10, 20, 30, 78]
+    [8, 9, 10, 12, 20, 30, 78]

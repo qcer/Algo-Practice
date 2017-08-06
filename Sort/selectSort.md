@@ -6,20 +6,20 @@
 
 两层循环，内循环负责找出最小元素的下标，外循环负责将内循环找出的最小元素放到有序的位置上。
 
-	function selectSort(ary) {
-		// body...
-		var length = ary.length;
-		var min = 0;
-		for (let i = 0; i < length; i++) {
-			min = i;
-			for (let j = i+1; j < length; j++) {
-				if (ary[min] > ary[j]) {
-					min = j;
-				}
-			}
-			[ary[i],ary[min]] = [ary[min],ary[i]];
-		}
-	}
+    function selectSort(ary) {
+        // body...
+        var length = ary.length;
+        var min = 0;
+        for (let i = 0; i < length; i++) {
+            min = i;
+            for (let j = i+1; j < length; j++) {
+                if (ary[min] > ary[j]) {
+                    min = j;
+                }
+            }
+            [ary[i],ary[min]] = [ary[min],ary[i]];
+        }
+    }
 注：
 
 1、维护一个额外变量min记录为此循环中当前序列最小元素的下边。每完成一轮外层循环，就一直当前序列中最小元素的下标，然后在外层循环体中将当前序列最小元素放到序列的前端（有可能最小元素就是序列开始的元素，这样就自己与自己交换）。
@@ -28,9 +28,9 @@
 2、
 内层循环判断条件
 
-	if (ary[min] > ary[j]) {
-		min = j;
-	}
+    if (ary[min] > ary[j]) {
+        min = j;
+    }
 和非立即交换的性质同时决定了此选择排序是稳定的排序。
 
 3、选择排序与冒泡排序的区别在于：冒泡排序每次发现有更小元素就立即交换到序列首位，而选择排序发现有更小元素时，只是记录其下标，等到内层循环完之后，在将最小元素交换到首伪。

@@ -116,7 +116,7 @@
                     while(tmpNode !== null){
                         if (tmpNode.data === target) {
                             if (tmpNode.rChild !== null && tmpNode.lChild !== null) {
-                                var succNode = this.getSuccNode(rootNode,tmpNode);
+                                var succNode = this.getSuccNode(tmpNode);
                                 tmpNode.data = succNode.data;
                                 tmpNode = tmpNode.rChild;//目标节点迭代
                                 target = succNode.data;//目标数据迭代

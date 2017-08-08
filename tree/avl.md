@@ -255,6 +255,20 @@
                     return node;
                 }
                 //插入
+                /*
+                答疑:
+                插入后搜寻失衡节点集为什么应该至少从该节点的祖父节点而不是其父节点开始呢？
+                因为其父节点那要么为叶节点，要么为单分支的节点
+                如果其父节点为叶节点，插入后，平衡因子为+1或者-1，任然平衡。
+                如果其父节点为单分支节点，插入前的平衡因子必为+1或者-1，插入后其平衡因子必为0；
+
+
+                答疑：
+                为什么节点插入的局部调整后局部的平衡即可保证全局的平衡呢？
+                因为在插入节点之前，以G节点为根的局部子树的高度和插并后重构之后的局部子树的高度实际上是没有变的，
+                正式由于调整前后局部子树的高度不变形，不会影响G的祖先节点的平衡性。
+
+                */
                 static insert(rootNode,target){
                     var tmpNode = rootNode;
                     var newNode = new Node(target);
@@ -285,13 +299,28 @@
                     return newNode;
                 }
 
+
+                //节点的删除
+                /*
+                答疑：
+                删除节点为什么失衡节点集中最多包含一个节点呢？
+                如果X的祖先链中无节点失衡，则全局无失衡节点，全树任然保持平衡。
+                如果X的祖先链中有一个节点失衡G，则该节点是唯一的失衡节点。
+                因为对于具体到删除节点的策略，正真被删除的节点实际上或者是页节点，或者是但有一个孩子的单分支节点。
+                G失衡具体只能是从-1-》-2失衡或者从1-》2失衡，G节点的深度 = MAX{h_left,h_right},无论哪种失衡情况，删除的节点只能位于较小高度的子树中，因此节点G暂时的树高不变，因此G的祖先节点必然是平衡的。
+                但是删除节点存在失衡传播的情况。
+
+                答疑：
+                为什么删除节点会存在失衡传播的情况？
+                因为局部的调整后可能会导致局部子树的高度降低，如果原先该局部子树刚好作为一棵较低深度的子树，则失衡会传递到其祖先节点。正因为删除节点存在失衡传播的现象，因此需要沿着祖先链逐层网上修复。在代码的实现上表现为递归调用重平衡函数。
+                */
                 static remove(rootNode,target){
                     var tmpNode = rootNode;
                     while(tmpNode !== null){
                         if (tmpNode.data === target) {
                             var tmpParent = tmpNode.parent;
                             if (tmpNode.rChild !== null && tmpNode.lChild !== null) {
-                                var succNode = this.getSuccNode(rootNode,tmpNode);
+                                var succNode = this.getSuccNode(tmpNode);
                                 tmpNode.data = succNode.data;
                                 tmpNode = tmpNode.rChild;//目标节点迭代
                                 target = succNode.data;//目标数据迭代

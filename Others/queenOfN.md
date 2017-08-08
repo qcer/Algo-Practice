@@ -73,6 +73,7 @@
 
 
 **测试用例**
+
     queenOfN(1) //console.log(count)->1
     queenOfN(2) //console.log(count)->0
     queenOfN(3) //console.log(count)->0

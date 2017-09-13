@@ -29,6 +29,8 @@
 10. [买股票问题](https://github.com/qcer/Algo-Practice/blob/master/Others/010.md)
 11. [随机红包问题](https://github.com/qcer/Algo-Practice/blob/master/Others/011.md)
 12. [N皇后问题](https://github.com/qcer/Algo-Practice/blob/master/Others/queenOfN.md)
+13. [逆波兰表达式](https://github.com/qcer/Algo-Practice/blob/master/Others/RPN.md)
+14. [A*寻径算法](https://github.com/qcer/Algo-Practice/blob/master/Others/AStar.md)
 
 
 
@@ -47,6 +49,8 @@
 
 #### **五、字符串**
 1. [字符判重](https://github.com/qcer/Algo-Practice/blob/master/String/isUnique.md)
+2. [蛮力字符串匹配](https://github.com/qcer/Algo-Practice/blob/master/String/BruteForce.md)
+3. [KMP](https://github.com/qcer/Algo-Practice/blob/master/String/KMP.md)
 
 
 #### **六、树**

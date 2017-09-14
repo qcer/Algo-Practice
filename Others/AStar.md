@@ -41,65 +41,56 @@
         }
         
         public static Node[] AStarAlgo(Node[][] tableOf2D,Node startNode,Node endNode){
-            int row = tableOf2D.length,column = tableOf2D[0].length;
-            ArrayList<Node> openList = new ArrayList<Node>();
-            ArrayList<Node> closeList = new ArrayList<Node>();
-            Node currNode = startNode;
-            Node nextNode,checkedNode = startNode;
-            int minF;
-            currNode.varG = 0;
-            currNode.varF = currNode.varH = getDistance(currNode, endNode);
-            openList.add(currNode);
-            while(!checkedNode.equals(endNode)){//!checkedNode.equals(endNode)
-                minF = Integer.MAX_VALUE;
-                for (int i = 0; i < openList.size(); i++) {
-                    if (openList.get(i).varF < minF) {
-                        checkedNode = openList.get(i);
-                        minF = checkedNode.varF;
-                    }
-                }
-                closeList.add(checkedNode);
-                openList.remove(checkedNode);
-                
-                if (checkedNode.y-1 >= 0 && tableOf2D[checkedNode.x][checkedNode.y-1].isOpen ) {
-                    nextNode = tableOf2D[checkedNode.x][checkedNode.y-1];
-                    if (!openList.contains(nextNode)) {
-                        nextNode.parent = checkedNode;
-                    }
-                    openList.add(nextNode);
-                    updateFGH(nextNode,startNode,endNode);
-                    nextNode.isOpen = false;
-                }
-                if (checkedNode.y+1 <= column-1 && tableOf2D[checkedNode.x][checkedNode.y+1].isOpen ) {
-                    nextNode = tableOf2D[checkedNode.x][checkedNode.y+1];
-                    if (!openList.contains(nextNode)) {
-                        nextNode.parent = checkedNode;
-                    }
-                    openList.add(nextNode);
-                    updateFGH(nextNode,startNode,endNode);
-                    nextNode.isOpen = false;
-                }
-                if (checkedNode.x-1 >= 0 && tableOf2D[checkedNode.x-1][checkedNode.y].isOpen ) {
-                    nextNode = tableOf2D[checkedNode.x-1][checkedNode.y];
-                    if (!openList.contains(nextNode)) {
-                        nextNode.parent = checkedNode;
-                    }
-                    openList.add(nextNode);
-                    updateFGH(nextNode,startNode,endNode);
-                    nextNode.isOpen = false;
-                }
-                if (checkedNode.x+1 <= row-1 && tableOf2D[checkedNode.x+1][checkedNode.y].isOpen ) {
-                    nextNode = tableOf2D[checkedNode.x+1][checkedNode.y];
-                    if (!openList.contains(nextNode)) {
-                        nextNode.parent = checkedNode;
-                    }
-                    openList.add(nextNode);
-                    updateFGH(nextNode,startNode,endNode);
-                    nextNode.isOpen = false;
+        int row = tableOf2D.length,column = tableOf2D[0].length;
+        ArrayList<Node> openList = new ArrayList<Node>();
+        ArrayList<Node> closeList = new ArrayList<Node>();
+        Node nextNode,checkedNode = startNode;
+        int minF;
+        startNode.varG = 0;
+        startNode.varF = startNode.varH = getDistance(startNode, endNode);
+        openList.add(startNode);
+        while(!checkedNode.equals(endNode)){//!checkedNode.equals(endNode)
+            minF = Integer.MAX_VALUE;
+            for (int i = 0; i < openList.size(); i++) {
+                if (openList.get(i).varF < minF) {
+                    checkedNode = openList.get(i);
+                    minF = checkedNode.varF;
                 }
             }
-            return closeList.toArray(new Node[closeList.size()]);
+            closeList.add(checkedNode);
+            openList.remove(checkedNode);
+            
+            if (checkedNode.y-1 >= 0 && tableOf2D[checkedNode.x][checkedNode.y-1].isOpen ) {
+                nextNode = tableOf2D[checkedNode.x][checkedNode.y-1];
+                nextNode.parent = checkedNode;
+                openList.add(nextNode);
+                updateFGH(nextNode,startNode,endNode);
+                nextNode.isOpen = false;
+            }
+            if (checkedNode.y+1 <= column-1 && tableOf2D[checkedNode.x][checkedNode.y+1].isOpen ) {
+                nextNode = tableOf2D[checkedNode.x][checkedNode.y+1];
+                nextNode.parent = checkedNode;
+                openList.add(nextNode);
+                updateFGH(nextNode,startNode,endNode);
+                nextNode.isOpen = false;
+            }
+            if (checkedNode.x-1 >= 0 && tableOf2D[checkedNode.x-1][checkedNode.y].isOpen ) {
+                nextNode = tableOf2D[checkedNode.x-1][checkedNode.y];
+                nextNode.parent = checkedNode;
+                openList.add(nextNode);
+                updateFGH(nextNode,startNode,endNode);
+                nextNode.isOpen = false;
+            }
+            if (checkedNode.x+1 <= row-1 && tableOf2D[checkedNode.x+1][checkedNode.y].isOpen ) {
+                nextNode = tableOf2D[checkedNode.x+1][checkedNode.y];
+                nextNode.parent = checkedNode;
+                openList.add(nextNode);
+                updateFGH(nextNode,startNode,endNode);
+                nextNode.isOpen = false;
+            }
         }
+        return closeList.toArray(new Node[closeList.size()]);
+    }
         public static void main(String[] args) {
             // TODO Auto-generated method stub
             try {

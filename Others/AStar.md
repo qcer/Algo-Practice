@@ -1,3 +1,7 @@
+**算法原理解析**：
+
+[http://www.cnblogs.com/qcblog/p/7507995.html](http://www.cnblogs.com/qcblog/p/7507995.html)
+    
     package agstring;
     import java.util.ArrayList;
     import java.util.*;
@@ -41,56 +45,56 @@
         }
         
         public static Node[] AStarAlgo(Node[][] tableOf2D,Node startNode,Node endNode){
-        int row = tableOf2D.length,column = tableOf2D[0].length;
-        ArrayList<Node> openList = new ArrayList<Node>();
-        ArrayList<Node> closeList = new ArrayList<Node>();
-        Node nextNode,checkedNode = startNode;
-        int minF;
-        startNode.varG = 0;
-        startNode.varF = startNode.varH = getDistance(startNode, endNode);
-        openList.add(startNode);
-        while(!checkedNode.equals(endNode)){//!checkedNode.equals(endNode)
-            minF = Integer.MAX_VALUE;
-            for (int i = 0; i < openList.size(); i++) {
-                if (openList.get(i).varF < minF) {
-                    checkedNode = openList.get(i);
-                    minF = checkedNode.varF;
+            int row = tableOf2D.length,column = tableOf2D[0].length;
+            ArrayList<Node> openList = new ArrayList<Node>();
+            ArrayList<Node> closeList = new ArrayList<Node>();
+            Node nextNode,checkedNode = startNode;
+            int minF;
+            closeList.add(startNode);
+            startNode.isOpen = false;
+            while(!checkedNode.equals(endNode)){//!checkedNode.equals(endNode)
+                if (checkedNode.y-1 >= 0 && tableOf2D[checkedNode.x][checkedNode.y-1].isOpen ) {
+                    nextNode = tableOf2D[checkedNode.x][checkedNode.y-1];
+                    nextNode.parent = checkedNode;
+                    openList.add(nextNode);
+                    updateFGH(nextNode,startNode,endNode);
+                    nextNode.isOpen = false;
                 }
+                if (checkedNode.y+1 <= column-1 && tableOf2D[checkedNode.x][checkedNode.y+1].isOpen ) {
+                    nextNode = tableOf2D[checkedNode.x][checkedNode.y+1];
+                    nextNode.parent = checkedNode;
+                    openList.add(nextNode);
+                    updateFGH(nextNode,startNode,endNode);
+                    nextNode.isOpen = false;
+                }
+                if (checkedNode.x-1 >= 0 && tableOf2D[checkedNode.x-1][checkedNode.y].isOpen ) {
+                    nextNode = tableOf2D[checkedNode.x-1][checkedNode.y];
+                    nextNode.parent = checkedNode;
+                    openList.add(nextNode);
+                    updateFGH(nextNode,startNode,endNode);
+                    nextNode.isOpen = false;
+                }
+                if (checkedNode.x+1 <= row-1 && tableOf2D[checkedNode.x+1][checkedNode.y].isOpen ) {
+                    nextNode = tableOf2D[checkedNode.x+1][checkedNode.y];
+                    nextNode.parent = checkedNode;
+                    openList.add(nextNode);
+                    updateFGH(nextNode,startNode,endNode);
+                    nextNode.isOpen = false;
+                }
+                
+                minF = Integer.MAX_VALUE;
+                for (int i = 0; i < openList.size(); i++) {
+                    if (openList.get(i).varF < minF) {
+                        checkedNode = openList.get(i);
+                        minF = checkedNode.varF;
+                    }
+                }
+                closeList.add(checkedNode);
+                openList.remove(checkedNode);
+
             }
-            closeList.add(checkedNode);
-            openList.remove(checkedNode);
-            
-            if (checkedNode.y-1 >= 0 && tableOf2D[checkedNode.x][checkedNode.y-1].isOpen ) {
-                nextNode = tableOf2D[checkedNode.x][checkedNode.y-1];
-                nextNode.parent = checkedNode;
-                openList.add(nextNode);
-                updateFGH(nextNode,startNode,endNode);
-                nextNode.isOpen = false;
-            }
-            if (checkedNode.y+1 <= column-1 && tableOf2D[checkedNode.x][checkedNode.y+1].isOpen ) {
-                nextNode = tableOf2D[checkedNode.x][checkedNode.y+1];
-                nextNode.parent = checkedNode;
-                openList.add(nextNode);
-                updateFGH(nextNode,startNode,endNode);
-                nextNode.isOpen = false;
-            }
-            if (checkedNode.x-1 >= 0 && tableOf2D[checkedNode.x-1][checkedNode.y].isOpen ) {
-                nextNode = tableOf2D[checkedNode.x-1][checkedNode.y];
-                nextNode.parent = checkedNode;
-                openList.add(nextNode);
-                updateFGH(nextNode,startNode,endNode);
-                nextNode.isOpen = false;
-            }
-            if (checkedNode.x+1 <= row-1 && tableOf2D[checkedNode.x+1][checkedNode.y].isOpen ) {
-                nextNode = tableOf2D[checkedNode.x+1][checkedNode.y];
-                nextNode.parent = checkedNode;
-                openList.add(nextNode);
-                updateFGH(nextNode,startNode,endNode);
-                nextNode.isOpen = false;
-            }
+            return closeList.toArray(new Node[closeList.size()]);
         }
-        return closeList.toArray(new Node[closeList.size()]);
-    }
         public static void main(String[] args) {
             // TODO Auto-generated method stub
             try {
@@ -101,13 +105,14 @@
     //                  System.out.println(data[i][j]);
     //              }
     //          }
-                data[1][3].isOpen = data[2][3].isOpen = data[3][3].isOpen = data[4][3].isOpen = false;
-                data[0][5].isOpen = data[1][5].isOpen = data[2][5].isOpen = data[3][5].isOpen = false;
+    //          data[1][3].isOpen = data[2][3].isOpen = data[3][3].isOpen = data[4][3].isOpen = false;
+    //          data[0][5].isOpen = data[1][5].isOpen = data[2][5].isOpen = data[3][5].isOpen = false;
                 Node startNode = data[2][1];
-                Node endNode = data[1][6];
-                AStarAlgo(data,startNode,endNode);
+                Node endNode = data[0][2];
+                Node[] pathAry = AStarAlgo(data,startNode,endNode);
+
                 Node tmpNode = endNode;
-                while(!tmpNode.equals(startNode)){
+                while(!(tmpNode == null)){
                     System.out.println(tmpNode);
                     tmpNode = tmpNode.parent;
                 }
@@ -116,4 +121,5 @@
                 e.printStackTrace();
             }
         }
+
     }

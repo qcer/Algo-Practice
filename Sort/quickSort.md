@@ -8,7 +8,7 @@
             j = high+1;
         while(true){
             while(ary[++i] < pivot){
-                if (i == high) {break;}//在序列尾部相遇，此处不是必须的
+                if (i == high) {break;}//此处的检查必要，当pivot为最大时，从这里break；
             }
             while(ary[--j] > pivot){
                 if (j == low) {break;}//此处不是必须的，循环也不可能从此处退出
@@ -51,11 +51,7 @@
 这里退出。此时i>j;
 
 4）但实际上条件
-
      if (j == low) {break;}
-和条件
-
-      if (i == high) {break;}
 均不是必须的，可去掉。
 
 **测试数组：**

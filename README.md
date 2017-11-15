@@ -101,6 +101,12 @@
 12. [二叉搜索树最邻近结点](https://github.com/qcer/Algo-Practice/blob/master/tree/getNearestNode.md)
 13. [二叉树路径和](https://github.com/qcer/Algo-Practice/blob/master/tree/findSumOfPath.md)
 
+#### **参考资料**
+1. 《进军硅谷》
+2. 《算法设计与分析基础》
+3. 《算法导论》
+
+
 
 
 

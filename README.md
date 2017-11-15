@@ -2,6 +2,45 @@
 
 
 ### **目录**
+
+### **Java篇**
+#### **一、基础算法**
+1. [七种基础排序](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agsort/Sort.java)
+2. [二叉堆](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agheap/BinHeap.java)
+3. [K选取问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agother/KSelection.java)
+4. [链表判环问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/aglist/Circle.java)
+5. [N皇后问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agother/Queen.java)
+6. [两指针扫描算法举例](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agother/Pointer.java)
+7. [位运算(求首个bit1，求bit1的个数，寻找奇数项)](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agother/Bit.java)
+8. [最小栈的实现](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agother/MinStack.java)
+9. [横纵有序二维数组之元素查找](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agother/Ary2D.java)
+10. [A*算法](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agother/AStar.java)
+11. [同时寻找序列的最大最小值](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agother/Compare.java)
+
+#### **二、字符串**
+1. [蛮力字符串匹配](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agstring/BruteForce.java)
+2. [KMP](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agstring/KMP.java)
+3. [逆波兰表达式](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agstring/RPN.java)
+
+
+#### **三、DP和贪心算法专题**
+1. [钢条切割问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/Cut.java)
+2. [最大借书量问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/Books.java)
+3. [硬币收集问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/CollectionCoins.java)
+4. [找零问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/Coins.java)
+5. [矩阵链乘法问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/Matrix.java)
+6. [最长公共子序列(LCS)](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/LCS.java)
+7. [最短编辑距离问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/SED.java)
+8. [最长回文子序列(LPS)](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/LPS.java)
+9. [0-1背包问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/Package.java)
+10. [DNA序列对齐问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/agdp/Alignment.java)
+11. [活动选择问题](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/aggreedy/Activity.java)
+12. [赫夫曼编码](https://github.com/qcer/Algo-Practice/blob/master/algo_java/src/aggreedy/HuffmanTree.java)
+
+
+
+
+### **JavaScript篇**
 #### **一、排序**
 
 1. [冒泡排序](https://github.com/qcer/Algo-Practice/blob/master/Sort/bubbleSort.md)
@@ -28,11 +67,6 @@
 9. [数组分界值](https://github.com/qcer/Algo-Practice/blob/master/Others/009.md)
 10. [买股票问题](https://github.com/qcer/Algo-Practice/blob/master/Others/010.md)
 11. [随机红包问题](https://github.com/qcer/Algo-Practice/blob/master/Others/011.md)
-12. [N皇后问题](https://github.com/qcer/Algo-Practice/blob/master/Others/queenOfN.md)
-13. [逆波兰表达式](https://github.com/qcer/Algo-Practice/blob/master/Others/RPN.md)
-14. [A*寻径算法](https://github.com/qcer/Algo-Practice/blob/master/Others/AStar.md)
-
-
 
 
 
@@ -50,8 +84,6 @@
 
 #### **五、字符串**
 1. [字符判重](https://github.com/qcer/Algo-Practice/blob/master/String/isUnique.md)
-2. [蛮力字符串匹配](https://github.com/qcer/Algo-Practice/blob/master/String/BruteForce.md)
-3. [KMP](https://github.com/qcer/Algo-Practice/blob/master/String/KMP.md)
 
 
 #### **六、树**

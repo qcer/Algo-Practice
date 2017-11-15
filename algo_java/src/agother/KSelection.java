@@ -1,6 +1,6 @@
 package agother;
 
-public class Demo {
+public class KSelection {
 	private static void swap(int[] ary,int indexA,int indexB){
 		int tmp;
 		tmp = ary[indexA];
